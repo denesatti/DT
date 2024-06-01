@@ -27,15 +27,15 @@ function Post() {
     return (
         <div className='post_container'>
             <div className='post_post'>
-                <img src={`http://localhost:3001/Images/${post.file}`} alt={post.title} className='post_image' />
+                <img src={post.file} alt={post.title} className='post_image' />
                 <h1 className='post_title'>{post.title}</h1>
                 <p className='post_description'>{post.description}</p>
                 <div className='post_actions'>
                     {user.email === post.email ? (
-                        <>
+                        <div>
                             <Link to={`/editpost/${post._id}`} className='post_edit'>Edit</Link>
                             <button onClick={e => handleDelete(post._id)} className='post_delete'>Delete</button>
-                        </>
+                        </div>
                     ) : null}
                 </div>
             </div>

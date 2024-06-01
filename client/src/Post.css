@@ -49,6 +49,8 @@
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s;
+    min-width: 100px;
+
 }
 
 .post_edit {
@@ -61,8 +63,18 @@
 }
 
 .post_delete {
-    background-color: #f44336;
-    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s;
+    background-color: #f44336; /* Apply background color */
+    color: white; /* Apply text color */
+    white-space: nowrap; /* Ensure the text doesn't break */
+    display: inline-block; /* Ensure proper width calculation */
+    min-width: 100px; /* Set a minimum width for the button */
 }
 
 .post_delete:hover {
