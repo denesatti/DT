@@ -3,40 +3,45 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css';
 
+import Singe from './assets/singe.jpg';
+import Herzal from './assets/herzal.jpg';
+import Coro from './assets/coro.jpg';
+import Denes from './assets/denes.jpg';
+
 
 function About() {
 
   const teamMembers = [
     {
-      name: 'Alice Johnson',
+      name: 'Herzal Radu',
       role: 'Lead Marketing Manager',
-      description: 'Alice is a skilled frontend developer with a passion for creating intuitive user interfaces using React.',
-      image: 'alice.jpg',
+      description: 'Herzals descriptions.',
+      image: Herzal,
     },
     {
-      name: 'Bob Smith',
+      name: 'Singerean Tudor',
       role: 'Backend Developer',
-      description: 'Bob is a backend expert who ensures our servers run smoothly and efficiently with Node.js and Express.',
-      image: 'bob.jpg',
+      description: 'Singes description',
+      image: Singe,
     },
     {
-      name: 'Carol White',
+      name: 'Coroian Denisa',
       role: 'Full Stack Developer',
-      description: 'Carol is a full-stack developer with a knack for integrating frontend and backend technologies seamlessly.',
-      image: 'carol.jpg',
+      description: 'hallo, im coro',
+      image: Coro,
     },
     {
-      name: 'Dave Brown',
+      name: 'Denes Tamas',
       role: 'Database Administrator',
-      description: 'Dave manages our MongoDB database, ensuring data integrity and optimal performance.',
-      image: 'dave.jpg',
+      description: 'Sever was here',
+      image: Denes,
     },
   ];
 
   return (
     <div className="about">
       <h1>About Our Team</h1>
-      <p>We are a team of passionate developers who collaborated on building a full-stack forum application using the MERN stack.</p>
+      <p className='about_paragraph skin-colored-container'>We are a team of passionate developers who collaborated on building a full-stack blog application using the MERN stack so you can share your cats with everyone :) !</p>
       <div className="team">
         {teamMembers.map((member, index) => (
           <div className="team-member" key={index}>

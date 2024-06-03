@@ -21,7 +21,7 @@ function Register() {
         <div className='signup_form'>
             <h2>Sign Up</h2>
             <br />
-            <form onSubmit={handleSubmit}>
+            <form className='signup_form' onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Username:</label> <br />
                     <input type="text" placeholder='Enter username'
@@ -39,11 +39,11 @@ function Register() {
                     <input type="password" placeholder='********'
                     onChange={e => setPassword(e.target.value)}/>
                 </div>
-                <button className='signup_btn'>Sign up</button>
+                <button >Sign up</button>
             </form>
             <br></br>
             <p>Already have account?</p>
-            <Link to="/login"><button>Login</button></Link>
+            <Link to="/login"><button  className='signup_btn'>Login</button></Link>
         </div>
     </div>
   )

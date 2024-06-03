@@ -1,45 +1,45 @@
-import React, { useContext } from 'react'
-import './style.css'
-import { Link, useNavigate } from 'react-router-dom'
-import { userContext } from './App'
-import axios from 'axios'
-
+import React, { useContext } from 'react';
+import './style.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { userContext } from './App';
+import axios from 'axios';
+import logoImage from './assets/logo.png'
 
 function Navbar() {
-    const user = useContext(userContext)
-    const navigate = useNavigate()
+    const user = useContext(userContext);
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         axios.get('http://localhost:3001/logout')
-        .then(res => {
-            if(res.data === "Success")
-            navigate(0)
-        }).catch(err => console.log(err))
+            .then(res => {
+                if (res.data === "Success") navigate(0);
+            }).catch(err => console.log(err));
     }
-    
-  return (
-    <div className='navbar-header'>
-        <div><h3>Blog App</h3></div>
-        <div>
-            <Link to="/" className='link'>Home</Link>
-            {
-                user.username ? 
-                    <Link to="/create" className='link'>Create</Link>
-                : <></>
-            }
-            <a href="/about" className='link'>About</a>
-        </div>
-        {
-            user.username ?
-            <div>
-                <input type="button" onClick={handleLogout} value="Logout" className='btn_input'/>
-            </div>
-            :
-            <div><h5><Link to="/register" className="link">Register/Login</Link></h5></div>
-    
-        }
-    </div>
-  )
+
+    return (
+        <>
+            <nav className='navbar-header'>
+                <div className='navbar-logo'>
+                    <img src={logoImage} alt="Logo" className="logo-image" />
+                    <span className="logo-text">CatPosts</span>
+                </div>
+                <div className='navbar-links'>
+                    <Link to="/" className='link'>Home</Link>
+                    <a href="/about" className='link'>About</a>
+                </div>
+                <div className='navbar-user'>
+                    {user.username ?
+                        <button onClick={handleLogout} className='btn_input'>Logout</button>
+                        :
+                        <Link to="/register" className="link">Register/Login</Link>
+                    }
+                </div>
+            </nav>
+            {user.username && (
+                <Link to="/create" className="floating-button">+</Link>
+            )}
+        </>
+    );
 }
 
-export default Navbar
+export default Navbar;

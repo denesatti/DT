@@ -24,7 +24,7 @@ function Login() {
         <div className='signup_form'>
             <h2>Login </h2>
             <br />
-            <form onSubmit={handleSubmit}>
+            <form className='signup_form' onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label><br />
                     <input type="email" placeholder='Enter Email'
@@ -36,11 +36,11 @@ function Login() {
                     <input type="password" placeholder='********'
                     onChange={e => setPassword(e.target.value)}/>
                 </div>
-                <button className='signup_btn'>Login</button>
+                <button>Login</button>
             </form>
             <br></br>
             <p>Not Registered?</p>
-            <Link to="/register"><button>Signup</button></Link>
+            <Link to="/register"><button  className='signup_btn'>Signup</button></Link>
         </div>
     </div>
   )

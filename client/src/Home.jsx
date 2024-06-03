@@ -18,10 +18,12 @@ function Home() {
         <div className='posts_container'>
             {posts.map(post => (
                 <Link to={`/post/${post._id}`} className='post' key={post._id}>
-                    <img src={post.file} alt={post.title} className='post_image' />
-                    <div className='post_text'>
-                        <h2 className='post_title'>{post.title}</h2>
-                        <p className='post_description'>{post.description}</p>
+                    <div className='post_post'>
+                        <img src={post.file} alt={post.title} className='post_image' />
+                        <div className='post_text'>
+                            <h2 className='post_title'>{post.title}</h2>
+                            <p className='post_description'>{post.description}</p>
+                        </div>
                     </div>
                 </Link>
             ))}
