@@ -19,16 +19,19 @@ function Navbar() {
     return (
         <>
             <nav className='navbar-header'>
-                <div className='navbar-logo'>
-                    <img src={logoImage} alt="Logo" className="logo-image" />
+
+                <Link to="/" className='navbar-logo'>
+                    <img src={logoImage} alt="Logo" className="logo-image"/>
                     <span className="logo-text">CatPosts</span>
-                </div>
+                </Link>
+                <div className='rolling-text'>Consider buying us a coffee if you liked it 🐱</div>
+
                 <div className='navbar-links'>
                     <Link to="/" className='link'>Home</Link>
                     <a href="/about" className='link'>About</a>
                 </div>
                 <div className='navbar-user'>
-                    {user.username ?
+                {user.username ?
                         <button onClick={handleLogout} className='btn_input'>Logout</button>
                         :
                         <Link to="/register" className="link">Register/Login</Link>

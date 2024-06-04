@@ -6,4 +6,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+    document.getElementById('root') // This line targets the 'root' div in your index.html
+
 )

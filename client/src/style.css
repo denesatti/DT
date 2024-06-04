@@ -39,7 +39,7 @@ body {
 .navbar-header {
     position: fixed;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background-color: rgb(255, 255, 255); /* Opaque white background */
     padding: 20px; /* Add padding for spacing */
     top:0;
     display: flex;
@@ -100,6 +100,20 @@ body {
     font-size: 1em;
 }
 
+.rolling-text {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: rolling 4s linear infinite;
+    left: -500px;
+    margin-left: 1000px;
+}
+
+@keyframes rolling {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
 .btn_input:hover {
     background-color: #cc7700; /* Darker color on hover */
 }
@@ -119,12 +133,12 @@ body {
     }
 }
 
-.signup_container,
-.post_container {
+.signup_container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 90vh;
+    margin-top: 80px; /* Increase this value to move the form down */
 }
 
 .signup_form,
@@ -136,6 +150,8 @@ body {
     max-width: 500px;
     background-color: #fff5eb; /* Light orange background */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    margin-top: 80px;
+
 }
 
 .signup_form form input,
@@ -263,6 +279,16 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .post .post_text {
@@ -276,7 +302,21 @@ body {
     align-items: center; /* Center horizontally */
     width: 80%;
     margin: 20px 0;
-    height: auto;
+    margin-top: 80px;
+    animation: spin 5s linear infinite, zoom 3s ease-in-out infinite;
+
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .post_post img {
